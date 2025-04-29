@@ -1,0 +1,24 @@
+[[
+    {
+        "id": 1,
+        "nome": "Paulin Costa",
+        "email": "paulin.costa@email.com"
+    },
+    {
+        "id": 2,
+        "nome": "Plinio Silva",
+        "email": "plinio.silva@email.com"
+    },
+    {
+        "id": null,
+        "nome": "Hercules Almeida",
+        "email": "hercules.almeida@email.com"
+    },
+    {
+        "id": 3,
+        "nome": "Lima Santos",
+        "email": "lima.santos@email.com"
+    }
+]
+
+]
