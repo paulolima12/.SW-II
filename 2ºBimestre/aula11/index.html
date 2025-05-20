@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consulta de Endereço</title>
+</head>
+<body>
+  <script>
+    let consultarEndereco = async () => {
+      let entradaCep = document.getElementById('codigoPostal');
+      let resposta = await (await fetch(`http://viacep.com.br/ws/${entradaCep.value}/json/`)).json();
+
+      document.getElementById('endereco').textContent = resposta.logradouro;
+      document.getElementById('cidade').textContent = resposta.localidade;
+      document.getElementById('uf').textContent = resposta.uf;
+      document.getElementById('zona').textContent = resposta.bairro;
+      document.getElementById('regiao').textContent = resposta.regiao;
+      document.getElementById('estadoSigla').textContent = resposta.estado;
+    }
+  </script>
+
+  <h3>Digite o Código Postal</h3>
+  <input type="text" id="codigoPostal" />
+  <input type="submit" id="botaoBusca" onclick="consultarEndereco()" />
+
+  <div id="resultado">
+    <div>
+      <span>Endereço:</span>
+      <span id="endereco"></span>
+    </div>
+    <div>
+      <span>Bairro:</span>
+      <span id="zona"></span>
+    </div>
+    <div>
+      <span>Cidade:</span>
+      <span id="cidade"></span>
+    </div>
+    <div>
+      <span>UF:</span>
+      <span id="uf"></span>
+    </div>
+    <div>
+      <span>Sigla do Estado:</span>
+      <span id="estadoSigla"></span>
+    </div>
+    <div>
+      <span>Região:</span>
+      <span id="regiao"></span>
+    </div>
+  </div>
+</body>
+</html>
